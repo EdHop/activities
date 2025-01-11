@@ -1,3 +1,36 @@
+// Autoload the navbar and footer from seperate html files
+
+fetch('/public/navbar.html')
+.then(response => {
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    return response.text();
+})
+.then(doc => {
+    document.querySelector('.nav-container').innerHTML = doc;
+})
+.catch(error => {
+    console.error('There has been a problem with your fetch operation:', error);
+});
+
+fetch('/public/footer.html')
+.then(response => {
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    return response.text();
+})
+.then(doc => {
+    document.querySelector('.footer').innerHTML = doc;
+})
+.catch(error => {
+    console.error('There has been a problem with your fetch operation:', error);
+});
+
+
+
+// Random integer for the exercise/stretch selection
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
