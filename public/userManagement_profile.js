@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (!user) {
         // If no user is logged in, redirect to login page
-        window.location.href = "/public/login.html";
+        window.location.href = "/activities/public/login.html";
         return;
     }
 
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Logout functionality
     document.getElementById("logout-button").addEventListener("click", async () => {
         await supabase.auth.signOut();
-        window.location.href = "/index.html"; // Redirect after logout
+        window.location.href = "/activities/index.html"; // Redirect after logout
     });
 });
 

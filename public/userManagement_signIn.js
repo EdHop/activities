@@ -16,6 +16,6 @@
       alert(error.message);
     } else {
       console.log("User:", data.user);
-      window.location.href = "/public/profile.html";
+      window.location.href = "/activities/public/profile.html";
     }
   });
