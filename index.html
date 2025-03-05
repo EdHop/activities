@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercises</title>
-    <link href="./style.css" rel="stylesheet" />
+    <link href="/style.css" rel="stylesheet" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,10 +20,12 @@
                 <h2>Your chosen exercises are:</h2>
             </div>
             <div class="activity-container">
-                <p class = 'exercise right'></p>
+                <p class = 'exercise'></p>
                 <p class = 'exercise-duration'></p>
-                <p class = 'exercise right'></p>
+                <input type = "checkbox" class = "exercise-done" />
+                <p class = 'exercise'></p>
                 <p class = 'exercise-duration'></p>
+                <input type = "checkbox" class = "exercise-done" />
             </div>
     </div>
 
@@ -34,14 +36,18 @@
             </div>
 
             <div class="activity-container">
-                <p class = 'stretch right'></p>
+                <p class = 'stretch'></p>
                 <p class = 'stretch-duration'></p>
-                <p class = 'stretch right'></p>
+                <input type = "checkbox" class = "stretch-done" />
+                <p class = 'stretch'></p>
                 <p class = 'stretch-duration'></p>
-                <p class = 'stretch right'></p>
+                <input type = "checkbox" class = "stretch-done" />
+                <p class = 'stretch'></p>
                 <p class = 'stretch-duration'></p>
-                <p class = 'stretch right'></p>
+                <input type = "checkbox" class = "stretch-done" />
+                <p class = 'stretch'></p>
                 <p class = 'stretch-duration'></p>
+                <input type = "checkbox" class = "stretch-done" />
             </div>
 
         </div>
@@ -50,6 +56,9 @@
     <div class = "footer"></div>
 
 </div>
-    <script src="index.js" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>   <!-- This initialises Supabase on the site -->
+    <script src="/public/supabase.js"></script>
+    <script src="/public/userManagement_signIn.js"></script>
+    <script src="/index.js" charset="utf-8"></script>
 </body>
 </html>

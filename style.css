@@ -6,6 +6,12 @@ body{
 a{
     text-decoration: none;
     color: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+svg{
+    display: block;
 }
 
 
@@ -20,6 +26,8 @@ a{
     align-items: center;
 }
 
+/* Navbar: */
+
 .nav-container{
     margin: 40px 0 0 0;
     padding: 20px;
@@ -29,12 +37,21 @@ a{
     height: 30px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+.nav-left{
+    display: flex;
+}
+
+.nav-right{
+    display: flex;
 }
 
 .nav-button{
     background-color: #F5ECD5;
     padding: 10px;
+    margin: 0 5px;
     border-radius: 15px;
     min-width: 60px;
     display: flex;
@@ -52,17 +69,68 @@ a{
     color: #F5ECD5;
 }
 
+.outlined{
+    border-color: #578E7E;
+}
+
+.nav-button-account{
+    background-color: #F5ECD5;
+    padding: 10px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-color: #F5ECD5;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.nav-button-account:hover{
+    transition-duration: 0.1s;
+    background-color: #578E7E;
+    color: #F5ECD5;
+}
+
+.nav-text{
+    padding: 10px;
+    margin: 0 5px;
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #F5ECD5;
+}
+
+/* End of navbar section */
+
 .main-container{
-    margin: 0;
+    margin: 25px;
     padding: 0;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 80%;
     align-items: center;
 }
 
+.main-container-profile{
+    margin: 25px;
+    padding: 0;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.profile-details-container{
+    margin: 20px;
+    padding: 20px;
+    border-radius: 25px;
+    background-color: white;
+}
+
+/* Responsive containers: */
+
 .subheading-container{
-    width: 35%;
+    width: 45%;
     max-height: 500px;
     margin: 10px 0 10px 0;
     background-color: #FFFAEC;
@@ -71,13 +139,45 @@ a{
     justify-content: center;
 }
 
-.warning{
-    padding:0 15px 0 15px;
+
+.activity-container{
+    width: 45%;
+    max-height: 500px;
+    margin: 10px 0 10px 0;
+    background-color: #FFFAEC;
+    border-radius: 25px;
+    display: grid;
+    grid-template-columns: 8fr 1fr 1fr;
+    column-gap: 10px;
+    align-items: center;
+}
+
+.account-container{
+    margin: 50px;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    align-items: center;
+    background-color: white;
 }
 
 @media (max-width: 1650px) {
+    .activity-container{
+        width: 60%;
+        max-height: 500px;
+        margin: 10px 0 10px 0;
+        background-color: #FFFAEC;
+        border-radius: 25px;
+        display: grid;
+        grid-template-columns: 8fr 1fr 1fr;
+        column-gap: 10px;
+        align-items: center;
+    }
+
     .subheading-container{
-        width: 50%;
+        width: 60%;
         max-height: 500px;
         margin: 10px 0 10px 0;
         background-color: #FFFAEC;
@@ -85,9 +185,32 @@ a{
         display: flex;
         justify-content: center;
     }
+
+    .account-container{
+        margin: 50px;
+        padding: 20px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+        align-items: center;
+        background-color: white;
+    }
 }
 
 @media (max-width: 1200px) {
+    .activity-container{
+        width: 80%;
+        max-height: 500px;
+        margin: 10px 0 10px 0;
+        background-color: #FFFAEC;
+        border-radius: 25px;
+        display: grid;
+        grid-template-columns: 2.5fr 0.5fr 1fr;
+        column-gap: 10px;
+        align-items: center;
+    }
+
     .subheading-container{
         width: 80%;
         max-height: 500px;
@@ -98,47 +221,35 @@ a{
         display: flex;
         justify-content: center;
     }
-}
 
-.activity-container{
-    width: 35%;
-    max-height: 500px;
-    margin: 10px 0 10px 0;
-    background-color: #FFFAEC;
-    border-radius: 25px;
-    display: grid;
-    grid-template-columns: auto 50px;
-    column-gap: 10px;
-    align-items: center;
-}
-
-@media (max-width: 1650px) {
-    .activity-container{
+    .account-container{
+        margin: 50px;
+        padding: 20px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
         width: 50%;
-        max-height: 500px;
-        margin: 10px 0 10px 0;
-        background-color: #FFFAEC;
-        border-radius: 25px;
-        display: grid;
-        grid-template-columns: auto 50px;
-        column-gap: 10px;
         align-items: center;
+        background-color: white;
     }
 }
 
-@media (max-width: 1200px) {
-    .activity-container{
-        width: 80%;
-        max-height: 500px;
-        margin: 10px 0 10px 0;
-        background-color: #FFFAEC;
-        border-radius: 25px;
-        display: grid;
-        grid-template-columns: auto 50px;
-        column-gap: 10px;
+@media (max-width: 800px) {
+    .account-container{
+        margin: 50px;
+        padding: 20px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        width: 60%;
         align-items: center;
+        background-color: white;
     }
 }
+
+/* End of responsive container section */
+
+/* Exercises and stretch styling - these could be conflated by a new tag - the class tags are separate for JS purposes, not CSS */
 
 .stretch{
     padding: 0 20px 0 20px;
@@ -148,6 +259,17 @@ a{
     padding: 0 20px 0 20px;
 }
 
+.exercise-duration{
+    display: flex;
+    justify-content: end;
+}
+
+.stretch-duration{
+    display: flex;
+    justify-content: end;
+}
+
+/* End of exercises and stretch styling section */
 
 .footer{
     padding: 20px 0px 20px 0px;
@@ -167,6 +289,53 @@ a{
 
 
 
+.account-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.account-input{
+    background-color:white;
+    padding: 10px;
+    margin: 20px;
+    border: hidden;
+    border-bottom: 1px solid;
+}
+
+.account-input:focus{
+    outline: none;
+}
+
+.account-submit{
+    background-color:white;
+    width: 30%;
+    padding: 10px;
+    border: hidden;
+    border-bottom: 1px solid;
+    margin: 20px;
+}
+
+.account-submit2{
+    background-color:white;
+    width: 30%;
+    padding: 10px;
+    outline: hidden;
+    border: 1px solid;
+    margin: 20px;
+}
+
+.account-submit:hover{
+    transition-duration: 0.1s;
+    background-color: #578E7E;
+    color: #F5ECD5;
+}
+
+.account-submit2:hover{
+    transition-duration: 0.1s;
+    background-color: #578E7E;
+    color: #F5ECD5;
+}
 
 .quicksand {
   font-family: "Quicksand", serif;

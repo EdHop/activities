@@ -1,6 +1,6 @@
 // Autoload the navbar and footer from seperate html files
 
-fetch('./public/navbar.html')
+fetch('/public/navbar.html')
 .then(response => {
     if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -14,7 +14,7 @@ fetch('./public/navbar.html')
     console.error('There has been a problem with your fetch operation:', error);
 });
 
-fetch('./public/footer.html')
+fetch('/public/footer.html')
 .then(response => {
     if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -29,8 +29,22 @@ fetch('./public/footer.html')
 });
 
 
+// Navbar profile message
+document.addEventListener("DOMContentLoaded", async () => {
+    const { data: { user } } = await supabase.auth.getUser();
+    if (!user) {
+        document.getElementById("profile-message").innerHTML= "Sign in now!"
+    } else {
+        
+        let { data: user_details, error } = await supabase
+        .from('user_details')
+        .select('username')
+        .eq('user_id', user.id)
 
-
+        const username = user_details[0].username || "User";
+        document.getElementById("profile-message").innerHTML= `Hi ${username}!`
+    }
+})
 
 
 // Random integer for the exercise/stretch selection
@@ -97,3 +111,10 @@ let stretchDurations = document.querySelectorAll('.stretch-duration');
 stretchDurations.forEach((p, index) => {
     p.innerHTML = getRandomInt(20,10)
 });
+
+
+
+
+// Debugging
+
+console.log("Supabase client in index.js:", supabase);
