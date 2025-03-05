@@ -1,6 +1,6 @@
 // Autoload the navbar and footer from seperate html files
 
-fetch('/public/navbar.html')
+fetch('/activities/public/navbar.html')
 .then(response => {
     if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -14,7 +14,7 @@ fetch('/public/navbar.html')
     console.error('There has been a problem with your fetch operation:', error);
 });
 
-fetch('/public/footer.html')
+fetch('/activities/public/footer.html')
 .then(response => {
     if (!response.ok) {
         throw new Error('Network response was not ok');
