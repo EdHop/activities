@@ -232,9 +232,11 @@ svg{
         align-items: center;
         background-color: white;
     }
+
+
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
     .account-container{
         margin: 50px;
         padding: 20px;
@@ -244,6 +246,13 @@ svg{
         width: 60%;
         align-items: center;
         background-color: white;
+    }
+    .main-container-profile{
+        margin: 25px;
+        padding: 0;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -309,6 +318,7 @@ svg{
 
 .account-submit{
     background-color:white;
+    color: black;
     width: 30%;
     padding: 10px;
     border: hidden;
@@ -318,6 +328,7 @@ svg{
 
 .account-submit2{
     background-color:white;
+    color: black;
     width: 30%;
     padding: 10px;
     outline: hidden;
